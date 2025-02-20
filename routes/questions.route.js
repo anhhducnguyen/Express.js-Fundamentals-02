@@ -2,95 +2,60 @@ const express = require('express');
 const fs = require('fs');
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    let questions = fs.readFileSync("./dev-data/questions.json");
-    questions = JSON.parse(questions);
+const checkExist = require("../middlewares/checkExist")
+router.use(["/:id", "/"], checkExist);
 
+let questions;
+
+try {
+    questions = fs.readFileSync("./dev-data/questions.json");
+    questions = JSON.parse(questions);
+} catch (error) {
+    return res.status(500).json({
+        message: 'Error reading questions from file'
+    })
+}
+
+router.get("/", (req, res) => {
     res.json(questions);
 })
 
 router.get("/:id", (req, res) => {
-    let id = req.params.id;
-    let questions = fs.readFileSync("./dev-data/questions.json");
-    questions = JSON.parse(questions);
-
-    let findQuestion = questions.find(function (e, i) {
-        return e.id === +id;
-    })
-
-    if (findQuestion) {
-        res.json(findQuestion);
-    } else {
-        res.status(404).json({
-            message: 'Question not found'
-        });
-    }
+    res.json(req.question);
 })
 
 router.post("/", (req, res) => {
     let question = { ...req.body, id: Math.random() };
-    let questions = fs.readFileSync("./dev-data/questions.json");
-    questions = JSON.parse(questions);
+    questions.push(question);
 
-    let findQuestion = questions.find(function (e, i) {
-        return e.content === req.body.content;
+    fs.writeFileSync("./dev-data/questions.json", JSON.stringify(questions));
+    res.status(200).json({
+        message: 'Create successfully',
+        question: question
     })
-
-    if (!findQuestion) {
-        questions.push(question);
-        fs.writeFileSync("./dev-data/questions.json", JSON.stringify(questions));
-        res.status(200).json({
-            message: 'Create successfully',
-            question: question
-        })
-    } else {
-        res.status(400).json({
-            message: 'Question already exists'
-        });
-    }
 })
 
 router.put("/:id", (req, res) => {
     let id = req.params.id;
-    let questions = fs.readFileSync("./dev-data/questions.json");
-    questions = JSON.parse(questions);
+    questions[req.findIndex] = { ...req.body, id: +id };
 
-    let findQuestion = questions.findIndex(function (e, i) {
-        return e.id === +id;
-    })
-
-    if (findQuestion) {
-        questions[findQuestion] = { ...req.body, id: +id };
-        fs.writeFileSync("./dev-data/questions.json", JSON.stringify(questions));
-        res.json({
-            message: 'Update successfully',
-            question: questions[findQuestion]
-        });
-    } else {
-        res.status(404).json({
-            message: 'Question not found'
-        });
-    }
-})
+    fs.writeFileSync("./dev-data/questions.json", JSON.stringify(questions));
+    res.json({
+        message: 'Update successfully',
+        question: questions[req.findIndex]
+    });
+});
 
 router.delete("/:id", (req, res) => {
-    let id = req.params.id;
-    let questions = fs.readFileSync("./dev-data/questions.json");
-    questions = JSON.parse(questions);
-    let findQuestion = questions.findIndex(function (e, i) {
-        return e.id === +id;
-    })
-    if (findQuestion >= 0) {
-        questions.splice(findQuestion, 1);
-        fs.writeFileSync("./dev-data/questions.json", JSON.stringify(questions));
-        res.json({
-            message: 'Deleted successfully'
-        });
-    } else {
-        res.status(404).json({
-            message: 'Question not found'
-        });
-    }
+    questions.splice(req.findIndex, 1);
+    
+    fs.writeFileSync("./dev-data/questions.json", JSON.stringify(questions));
+    res.json({
+        message: 'Deleted successfully'
+    });
+    
 })
 
 module.exports = router;
+
+

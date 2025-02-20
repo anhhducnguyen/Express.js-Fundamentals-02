@@ -1,17 +1,5 @@
 [
   {
-    "content": "Anh Bách có motherfucking đẹp zai không =)))?",
-    "like": 2,
-    "dislike": 1,
-    "id": 1564582160504
-  },
-  {
-    "content": "Phong có phải checker không?",
-    "like": 2,
-    "dislike": 4,
-    "id": 1564582225226
-  },
-  {
     "content": "Việt Anh có gà vịt không?",
     "like": 1,
     "dislike": 5,
@@ -34,12 +22,6 @@
     "like": 3,
     "dislike": 3,
     "id": 1564777851067
-  },
-  {
-    "content": "An có giấu phóng lợn trong cốp không?",
-    "like": 2,
-    "dislike": 2,
-    "id": 1564777907804
   },
   {
     "content": "Hùng có biết chơi chim không????",
@@ -90,9 +72,33 @@
     "id": 1554540619384
   },
   {
-    "content": "Chị Dinh với Trang có xinh không nhi ???",
+    "content": "Chị Dinh với Trang có xinh không ??",
     "like": 3,
     "dislike": 2,
-    "id": 0.6528189896019425
+    "id": 0.4148784251866544
+  },
+  {
+    "content": "Thầy Phú có biết massage không nhi ?",
+    "like": 3,
+    "dislike": 4,
+    "id": 0.20770829290786064
+  },
+  {
+    "content": "Thầy Phú có biết massage không nhi oi oi ?",
+    "like": 3,
+    "dislike": 4,
+    "id": 0.1311534693136327
+  },
+  {
+    "content": "Thầy Phú có biết massage không nhi oi oi ?",
+    "like": 3,
+    "dislike": 4,
+    "id": 0.48045115720062914
+  },
+  {
+    "content": "An có giấu phóng lợn trong cốp không em?",
+    "like": 2,
+    "dislike": 2,
+    "id": 0.5881353621773766
   }
 ]

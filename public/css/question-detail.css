@@ -1,0 +1,99 @@
+/* Reset mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Thanh điều hướng */
+nav {
+    background-color: black;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logo a {
+    font-size: 18px;
+}
+
+/* Nội dung chính */
+.main-content {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Phần câu hỏi */
+.question-content {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Phần số lượng vote */
+.vote {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Thanh biểu đồ phần trăm vote */
+.rate-bar {
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+    height: 25px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dislike {
+    background-color: red;
+    width: 57%;
+    color: white;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+}
+
+.like {
+    background-color: blue;
+    width: 43%;
+    color: white;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+}
+
+/* Nút bấm */
+.btn {
+    margin-top: 20px;
+}
+
+#btn {
+    background-color: green;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btn:hover {
+    background-color: darkgreen;
+}

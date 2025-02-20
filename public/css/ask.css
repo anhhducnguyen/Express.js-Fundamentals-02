@@ -1,0 +1,113 @@
+/* Reset some default styles */
+body, ul, li, a, button, h1, textarea, input {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Basic body styling */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Navigation bar styling */
+nav {
+    background-color: black; /* Màu nền đen */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-start; /* Căn lề bên trái */
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px; /* Khoảng cách giữa các mục */
+    padding-left: 0; /* Đảm bảo không có padding bên trái */
+}
+
+nav ul li.logo a {
+    color: white; /* Chữ màu trắng */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul li a {
+    color: white; /* Chữ màu trắng */
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #333; /* Màu nền khi hover */
+}
+
+/* Main content styling */
+.main-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.main-content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.ask-area {
+    width: 100%;
+}
+
+.main-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.question-content {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: vertical;
+}
+
+.main-form div {
+    font-size: 14px;
+    color: #666;
+}
+
+#submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#submit-btn:hover {
+    background-color: #0056b3;
+}

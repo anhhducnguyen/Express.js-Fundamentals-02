@@ -1,0 +1,100 @@
+/* Reset some default styles */
+body, ul, li, a, button {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+
+/* Basic body styling */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Navigation bar styling */
+nav {
+    background-color: black; /* Màu nền đen */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-start; /* Căn lề bên trái */
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px; /* Khoảng cách giữa các mục */
+    padding-left: 0; /* Đảm bảo không có padding bên trái */
+}
+
+nav ul li.logo a {
+    color: white; /* Chữ màu trắng */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul li a {
+    color: white; /* Chữ màu trắng */
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #333; /* Màu nền khi hover */
+}
+
+/* Main content styling */
+.main-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-content {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Button group styling */
+.btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#dislike {
+    background-color: #dc3545;
+    color: white;
+}
+
+#dislike:hover {
+    background-color: #c82333;
+}
+
+#like {
+    background-color: #28a745;
+    color: white;
+}
+
+#like:hover {
+    background-color: #218838;
+}
